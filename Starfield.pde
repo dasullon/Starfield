@@ -8,6 +8,7 @@ void setup()
 		ha_mez[i] = new NormalParticle();
 	}
 	ha_mez[0]= new OddballParticle();
+	ha_mez[1]= new JumboParticle();
 }
 void draw()
 {
@@ -72,11 +73,19 @@ class OddballParticle  implements Particle
 		noStroke();
 		color c = color(255);
 		fill(c);
-		ellipse((float)x,(float)y,25,25);
+		ellipse((float)x,(float)y,40,40);
 	}
 	void move(){
 		
 		x+= Math.cos(dTheta)*dSpeed;
 		y+= Math.sin(dTheta)*dSpeed;
+	}
+}//
+class JumboParticle extends NormalParticle {
+ 
+JumboParticle(){
+		}
+void show(){
+	ellipse((float)x,(float)y,90,90);
 	}
 }//
